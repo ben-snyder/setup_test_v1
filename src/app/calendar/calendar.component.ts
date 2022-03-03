@@ -70,5 +70,6 @@ export class CalendarComponent implements OnInit {
         weekStart.toISOString(),
         weekEnd.toISOString(),
         this.authService.user?.timeZone ?? 'UTC');
+        console.log(this.events);
     }
 }

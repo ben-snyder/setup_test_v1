@@ -8,7 +8,7 @@
     <th scope="col">Subject</th>
     <th scope="col">Start</th>
     <th scope="col">End</th>
-    <!-- <th scope="col">TEST</th> -->
+    <th scope="col">Attendees</th> 
   </thead>
   <tbody>
     <tr *ngFor="let event of events">
@@ -16,7 +16,8 @@
       <td>{{event.subject}}</td>
       <td>{{formatDateTimeTimeZone(event.start) | date: 'short' }}</td>
       <td>{{formatDateTimeTimeZone(event.end) | date: 'short' }}</td>
-      <!-- <td>{{event.emails[0]}}</td> -->
+      <!-- <var id="attendees_list">{{event.attendees}}</var> -->
+      <td *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</td>
     </tr>
   </tbody>
 </table>
