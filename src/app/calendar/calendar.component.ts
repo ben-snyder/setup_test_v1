@@ -58,6 +58,7 @@ export class CalendarComponent implements OnInit {
     private authService: AuthService,
     private graphService: GraphService,
     private alertsService: AlertsService) { }
+  
 
     formatDateTimeTimeZone(dateTime: MicrosoftGraph.DateTimeTimeZone | undefined | null): Date | undefined {
       if (dateTime == undefined || dateTime == null) {
@@ -84,7 +85,7 @@ export class CalendarComponent implements OnInit {
       const now = new Date();
       const weekStart = zonedTimeToUtc(startOfMonth(now), timeZone);
       const weekEnd = zonedTimeToUtc(endOfMonth(now), timeZone);
-      
+   
       
       this.events = await this.graphService.getCalendarView(
         weekStart.toISOString(),
@@ -92,6 +93,6 @@ export class CalendarComponent implements OnInit {
         this.authService.user?.timeZone ?? 'UTC');
         console.log(this.events);
 
-        
+        // this.org
     }
 }
