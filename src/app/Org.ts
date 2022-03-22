@@ -1,3 +1,5 @@
+import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
+
 export class Org{
   
     private _name : string;
@@ -15,14 +17,13 @@ export class Org{
     public set organizer(v : string) {
       this._organizer = v;
     }
-  
-    
-    private _value : string;
-    public get value() : string {
-      return this._value;
+   
+    private _events : MicrosoftGraph.Event[];
+    public get events() : MicrosoftGraph.Event[] {
+      return this._events;
     }
-    public set value(v : string) {
-      this._value = v;
+    public set events(v : MicrosoftGraph.Event[]) {
+      this._events = v;
     }
        
     public Org(){}

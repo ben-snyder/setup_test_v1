@@ -1,6 +1,6 @@
 <!-- <p>calendar works!</p> -->
 
-<h1>C U There!</h1>
+<h1>CU There!</h1>
 <a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>
 <table class="table">
   <tbody>
@@ -14,3 +14,18 @@
     </tr>
   </tbody>
 </table>
+
+<div class="card" style="width: 18rem;" *ngFor="let event of events">
+  <img src="../assets/placeholder.jpg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  </div>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Organizer: {{event.organizer?.emailAddress?.name}}</li>
+    <li class="list-group-item">Subject: {{event.subject}}</li>
+    <li class="list-group-item">Start time: {{formatDateTimeTimeZone(event.start) | date: 'short' }}</li>
+    <li class="list-group-item" *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</li>
+  </ul>
+</div>

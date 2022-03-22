@@ -45,7 +45,6 @@ export class CalendarComponent implements OnInit {
     this._currentUser = v;
   }
 
-  
   private _allOrgs : Array<Org>;
   public get_allOrgs() : Array<Org> {
     return this._allOrgs;
@@ -78,6 +77,16 @@ export class CalendarComponent implements OnInit {
       // Convert the user's timezone to IANA format
       const ianaName = findIana(this.authService.user?.timeZone ?? 'UTC');
       const timeZone = ianaName![0].valueOf() || this.authService.user?.timeZone || 'UTC';
+
+      // Create dummy data
+      for(let i = 0; i < 10; i++){
+        const new_org = new Org();
+        new_org.name = 'Club #' + i;
+        new_org.organizer = 'Organizer fname/ lname #' + i;
+        
+        this._allOrgs.push(new_org);
+      }
+      
     
       // Get midnight on the start of the current week in the user's timezone,
       // but in UTC. For example, for Pacific Standard Time, the time value would be
@@ -85,7 +94,6 @@ export class CalendarComponent implements OnInit {
       const now = new Date();
       const weekStart = zonedTimeToUtc(startOfMonth(now), timeZone);
       const weekEnd = zonedTimeToUtc(endOfMonth(now), timeZone);
-   
       
       this.events = await this.graphService.getCalendarView(
         weekStart.toISOString(),
