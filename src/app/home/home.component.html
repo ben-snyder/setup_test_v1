@@ -1,14 +1,52 @@
-<!-- <p>home works!</p> -->
+<!-- <p>calendar works!</p> -->
 
-<div class="jumbotron">
-    <h1>Angular Graph Tutorial</h1>
-    <p class="lead">This sample app shows how to use the Microsoft Graph API from Angular</p>
-    <div *ngIf="authenticated; then welcomeUser else signInPrompt"></div>
-    <ng-template #welcomeUser>
-      <h4>Welcome {{ user != null ? user.displayName : '' }}!</h4>
-      <p>Use the navigation bar at the top of the page to get started.</p>
-    </ng-template>
-    <ng-template #signInPrompt>
-      <button class="btn btn-primary btn-large" role="button" (click)="signIn()">Click here to sign in</button>
-    </ng-template>
+<h1>CU There! testing</h1>
+<a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>
+<!-- <table class="table">
+  <tbody>
+    <tr *ngFor="let event of events">
+      <td>{{event.organizer?.emailAddress?.name}}</td>
+      <td>{{event.subject}}</td>
+      <td>{{formatDateTimeTimeZone(event.start) | date: 'short' }}</td>
+      <td>{{formatDateTimeTimeZone(event.end) | date: 'short' }}</td>
+      <var id="attendees_list">{{event.attendees}}</var>
+      <td *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+<div class="container">
+  <div class="row row-cols-3">
+    <div class="col" *ngFor="let org of test_orgs">
+      <div class="card" style="width: 18rem;">
+        <img src="../assets/placeholder.jpg" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+        </div>
+        <!--
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Organizer: {{event.organizer?.emailAddress?.name}}</li>
+          <li class="list-group-item">Subject: {{event.subject}}</li>
+          <li class="list-group-item">Start time: {{formatDateTimeTimeZone(event.start) | date: 'short' }}</li>
+          <li class="list-group-item" *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</li>
+        </ul>-->
+      </div>
+    </div>
   </div>
+</div>
+
+<!-- <div class="card" style="width: 18rem;" *ngFor="let event of events">
+  <img src="../assets/placeholder.jpg" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5> -->
+    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+  <!-- </div>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Organizer: {{event.organizer?.emailAddress?.name}}</li>
+    <li class="list-group-item">Subject: {{event.subject}}</li>
+    <li class="list-group-item">Start time: {{formatDateTimeTimeZone(event.start) | date: 'short' }}</li>
+    <li class="list-group-item" *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</li>
+  </ul>
+</div> -->

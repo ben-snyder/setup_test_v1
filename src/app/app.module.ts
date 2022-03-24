@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NewEventComponent } from './new-event/new-event.component';
+import { OrgViewComponent } from './org-view/org-view.component';
+import { EventViewComponent } from './event-view/event-view.component';
 
 let msalInstance: IPublicClientApplication | undefined = undefined;
 
@@ -43,7 +45,9 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     HomeComponent,
     AlertsComponent,
     CalendarComponent,
-    NewEventComponent
+    NewEventComponent,
+    OrgViewComponent,
+    EventViewComponent
   ],
   imports: [
     BrowserModule,
