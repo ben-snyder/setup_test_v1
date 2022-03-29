@@ -14,25 +14,29 @@
     </tr>
   </tbody>
 </table> -->
-
-<div class="container">
-  <div class="row row-cols-3">
-    <div class="col" *ngFor="let org of test_orgs">
-      <div class="card" style="width: 18rem;">
-        <img src="../assets/placeholder.jpg" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+<div class="container" onload="onLoad">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+      <div class="row row-cols-md-3 g-4">
+        <div class="col" *ngFor="let org of test_orgs">
+          <div class="card org-card">
+            <img src="../assets/placeholder.jpg" class="img-fluid">
+            <div class="card-body">
+              <h5 class="card-title">{{org.get_name()}}</h5>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+            <!-- <ul class="list-group list-group-flush">
+              <li class="list-group-item">Organizer: {{org.get_organizer()}}</li>
+            </ul> -->
+          </div>
         </div>
-        <!--
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Organizer: {{event.organizer?.emailAddress?.name}}</li>
-          <li class="list-group-item">Subject: {{event.subject}}</li>
-          <li class="list-group-item">Start time: {{formatDateTimeTimeZone(event.start) | date: 'short' }}</li>
-          <li class="list-group-item" *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</li>
-        </ul>-->
       </div>
     </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col g-5"></div>
   </div>
 </div>
 
