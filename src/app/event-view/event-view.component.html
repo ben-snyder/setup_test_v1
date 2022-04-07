@@ -1,1 +1,26 @@
-<p>event-view works!</p>
+<!-- <p>event-view works!</p> -->
+
+<h1>CU There Events</h1>
+
+<div class="container" onload="onLoad">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col-8">
+        <div class="row row-cols-md-3 g-4">
+          <div class="col" *ngFor="let event of test_events">
+            <div class="card org-card">
+              <img src="../assets/placeholder.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title">{{event.subject}}</h5>
+                <p class="card-text">{{event.body}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    <div class="row">
+      <div class="col g-5"></div>
+    </div>
+  </div>
