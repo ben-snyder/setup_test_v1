@@ -8,13 +8,15 @@
       <div class="col-8">
         <div class="row row-cols-md-3 g-4">
           <div class="col" *ngFor="let event of test_events">
-            <div class="card org-card">
-              <img src="../assets/placeholder.jpg" class="img-fluid">
-              <div class="card-body">
-                <h5 class="card-title">{{event.subject}}</h5>
-                <p class="card-text">{{event.body}}</p>
+            <a routerLink="/event-detail" class="btn-link" routerLinkActive="active">
+              <div class="card org-card">
+                <img src="../assets/placeholder.jpg" class="img-fluid">
+                <div class="card-body">
+                  <h5 class="card-title">{{event.subject}}</h5>
+                  <p class="card-text">{{event.body}}</p>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>
