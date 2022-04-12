@@ -15,9 +15,8 @@ ngOnInit(): void {
 }
 */
 
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit, ViewContainerRef, Inject} from '@angular/core';
 import { endOfMonth, isThisWeek, parseISO, startOfMonth } from 'date-fns';
-import { endOfWeek, startOfWeek } from 'date-fns/esm';
 import { zonedTimeToUtc } from 'date-fns-tz';
 import { findIana } from 'windows-iana';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
@@ -28,16 +27,16 @@ import { AlertsService } from '../alerts.service';
 import { User } from '../user';
 import { Org } from '../Org';
 import { CurrentUser } from '../CurrentUser';
-import { getPopperOptions } from '@ng-bootstrap/ng-bootstrap/util/positioning';
-import { Client } from '@microsoft/microsoft-graph-client';
-import { io } from "socket.io-client";
 import { NewEvent } from '../NewEvent';
-
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgModel } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import * as data from 'src/data.json'
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 
 export class HomeComponent implements OnInit {
@@ -68,6 +67,7 @@ export class HomeComponent implements OnInit {
   public test_orgs: Org[] = [];
   public currentUser?: CurrentUser = undefined;
   public events?: MicrosoftGraph.Event[] = [];
+  public name: string;
 
   // Convert the user's timezone to IANA format
   public ianaName = findIana(this.authService.user?.timeZone ?? 'UTC');
@@ -83,56 +83,55 @@ export class HomeComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private graphService: GraphService,
-    private alertsService: AlertsService) { }
+    private alertsService: AlertsService,
+    private route: ActivatedRoute,
+    private router: Router,
+    public dialog: MatDialog){}
 
   ngOnInit() {
-    //Create test data
-    for (let i = 0; i < 10; i++) {
-      const new_org = new Org();
-      new_org.set_name('Club #' + i);
-      new_org.set_organizer('Organizer fname/ lname #' + i);
-      for (let j = 0; j < 5; j++) {
-        try {
-          const testEvent = new NewEvent('chess club tournament',
-            'avery.wittmer@cornerstone.edu;benjamin.snyder@cornerstone.edu',
-            '03/25/22:T14:00:00',
-            '03/25/22:T15:00:00',
-            'Come join the chess club for our first introductory tournament of the year! All skill levels/ ELOs welcome!'
-          );
-          new_org.get_events().push(testEvent);
-        }
-        catch (error) {
-          console.log('Error creating test events');
-        }
-      }
-      this.test_orgs.push(new_org);
-    }
+
+    console.log('in init');
+    
+    this.route.queryParams.subscribe(params =>{
+      this.name = params['name'];
+    });
+
+      const org_data = JSON.parse(JSON.stringify(data));
+      console.log(org_data);
+    
     this.currentUser = {
       fName: 'f1',
       lName: 'l1',
       email: 'email1',
       password: 'pass1',
       joinedOrgs: this.test_orgs
-    };
-  }
-
-  onLoad() {
-    const cards = document.querySelectorAll(".org-card");
-    cards.forEach(card => {
-      card.addEventListener("click", () => {
-        window.location.href = 'org-view/org-view.component.html';
-      });
-    });
+    };  
   }
 
   async signIn(): Promise<void> {
-
     await this.authService.signIn();
     this.events = await this.graphService.getCalendarView(
       this.weekStart.toISOString(),
       this.weekEnd.toISOString(),
       this.authService.user?.timeZone ?? 'UTC');
-    console.log(this.events);
   }
 
+  viewOrg(selected_org: Org){
+    const dialogRef = this.dialog.open(OrgViewDialog, {
+      width: '100%',
+      height: '100%',
+      data: {
+        org: selected_org
+      }});
+
+    //this.router.navigate(['/org-view'], {queryParams: {'selected_org': selected_org}});
+  }
+}
+
+@Component({
+  selector:"org-view-dialog",
+  templateUrl:"org-view-dialog.html",
+})
+export class OrgViewDialog{
+  constructor(@Inject(MAT_DIALOG_DATA) public org: Org){}
 }

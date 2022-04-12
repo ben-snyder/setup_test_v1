@@ -19,7 +19,24 @@ export class Org{
     public set_organizer(v : string) {
       this._organizer = v;
     }
-
+    
+    private _description : string;
+    public get_description() : string {
+      return this._description;
+    }
+    public set_description(v : string) {
+      this._description = v;
+    }
+    
+    private logo_src: string;
+    public get_logo(){
+      return this.logo_src;
+    }
+    public set_logo(v:string) {
+      this.logo_src = v;
+    }
+    
+    
     private _events : NewEvent[];
     public get_events() : NewEvent[] {
       return this._events;

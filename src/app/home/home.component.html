@@ -1,37 +1,22 @@
-<!-- <p>calendar works!</p> -->
-
-<h1>CU There! testing</h1>
+<h1>CU There!</h1>
 <a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>
-<!-- <table class="table">
-  <tbody>
-    <tr *ngFor="let event of events">
-      <td>{{event.organizer?.emailAddress?.name}}</td>
-      <td>{{event.subject}}</td>
-      <td>{{formatDateTimeTimeZone(event.start) | date: 'short' }}</td>
-      <td>{{formatDateTimeTimeZone(event.end) | date: 'short' }}</td>
-      <var id="attendees_list">{{event.attendees}}</var>
-      <td *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</td>
-    </tr>
-  </tbody>
-</table> -->
-<div class="container" onload="onLoad">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col-8">
-      <div class="row row-cols-md-3 g-4">
-        <div class="col" *ngFor="let org of test_orgs">
-          <div class="card org-card">
-            <img src="../assets/placeholder.jpg" class="img-fluid">
-            <div class="card-body">
-              <h5 class="card-title">{{org.get_name()}}</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <!-- <ul class="list-group list-group-flush">
-              <li class="list-group-item">Organizer: {{org.get_organizer()}}</li>
-            </ul> -->
-          </div>
-        </div>
-      </div>
+<div id="container" class="container">
+  <div id="row" class="row">
+    <div id="col" class="col"></div>
+    <div id="col-8" class="col-8">
+      <table id="master-div" class="row row-cols-md-3 g-4">
+        <tr class="col" *ngFor="let org of test_orgs">
+          <!--<a routerLink="/org-view" [queryParams]="{selectedOrg: org}">-->
+            <td class="card" [ngModel]="org" (click)="viewOrg(org)">
+              <img src="../assets/placeholder.jpg" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title">{{org.get_name()}}</h5>
+                <p class="card-text">{{org.get_description()}}</p>
+              </div>
+            </td>
+          <!--</a>--> 
+          </tr>
+      </table>
     </div>
     <div class="col"></div>
   </div>
@@ -39,18 +24,3 @@
     <div class="col g-5"></div>
   </div>
 </div>
-
-<!-- <div class="card" style="width: 18rem;" *ngFor="let event of events">
-  <img src="../assets/placeholder.jpg" class="card-img-top">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5> -->
-    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-  <!-- </div>
-  
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Organizer: {{event.organizer?.emailAddress?.name}}</li>
-    <li class="list-group-item">Subject: {{event.subject}}</li>
-    <li class="list-group-item">Start time: {{formatDateTimeTimeZone(event.start) | date: 'short' }}</li>
-    <li class="list-group-item" *ngFor="let a of event.attendees">{{a.emailAddress?.name}}</li>
-  </ul>
-</div> -->

@@ -18,8 +18,9 @@ import { HomeComponent } from './home/home.component';
 import { AlertsComponent } from './alerts/alerts.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { NewEventComponent } from './new-event/new-event.component';
-import { OrgViewComponent } from './org-view/org-view.component';
 import { EventViewComponent } from './event-view/event-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 
 let msalInstance: IPublicClientApplication | undefined = undefined;
 
@@ -46,7 +47,6 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AlertsComponent,
     CalendarComponent,
     NewEventComponent,
-    OrgViewComponent,
     EventViewComponent
   ],
   imports: [
@@ -54,7 +54,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    MsalModule
+    MsalModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {
