@@ -32,6 +32,7 @@ import { getPopperOptions } from '@ng-bootstrap/ng-bootstrap/util/positioning';
 import { Client } from '@microsoft/microsoft-graph-client';
 import { io } from "socket.io-client";
 import { NewEvent } from '../NewEvent';
+import { NgbCarouselComponent } from '../ngb-carousel/ngb-carousel.component';
 
 
 @Component({
