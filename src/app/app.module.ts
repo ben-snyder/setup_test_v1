@@ -55,7 +55,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     NgbModule,
     FormsModule,
     MsalModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
   providers: [
     {

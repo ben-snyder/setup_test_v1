@@ -1,20 +1,17 @@
-<h1>CU There!</h1>
-<a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>
+<h1>c u ... where?</h1>
+<!--<a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>-->
 <div id="container" class="container">
   <div id="row" class="row">
     <div id="col" class="col"></div>
     <div id="col-8" class="col-8">
       <table id="master-div" class="row row-cols-md-3 g-4">
-        <tr class="col" *ngFor="let org of test_orgs">
-          <!--<a routerLink="/org-view" [queryParams]="{selectedOrg: org}">-->
-            <td class="card" [ngModel]="org" (click)="viewOrg(org)">
-              <img src="../assets/placeholder.jpg" class="img-fluid">
+        <tr class="col" *ngFor="let org of orgs">
+            <td class="card" (click)="viewOrg(org)">
+              <img src="{{org.get_logo()}}" class="img-fluid">
               <div class="card-body">
                 <h5 class="card-title">{{org.get_name()}}</h5>
-                <p class="card-text">{{org.get_description()}}</p>
               </div>
             </td>
-          <!--</a>--> 
           </tr>
       </table>
     </div>

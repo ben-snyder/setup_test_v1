@@ -4,49 +4,52 @@
             "name": "Chess Club",
             "organizer": "Dan Smith",
             "description": "A welcoming environment for chess newbies all the way up to pros!",
-            "logo_src": "/src/assets/chess.jpg"
+            "logo_src": "/assets/chess.jpg",
+            "events":{
+                       
+            }
         },
         "Math club": {
             "name": "Math Club",
             "organizer": "Roger Weiss",
             "description": "Come join us for new group math puzzles every week!",
-            "logo_src": "/src/assets/math.jpg"
+            "logo_src": "/assets/math.jpg"
         },
         "CU Boxing": {
             "name": "CU Boxing",
             "organizer": "George Foreman",
             "description": "We're a strong team of committed fighters looking to grow! Waiver needed before sparring.",
-            "logo_src": "/src/assets/boxing.jpg"
+            "logo_src": "/assets/boxing.jpg"
         },
         "CU Disk Golf": {
             "name": "CU Disk Golf",
             "organizer": "Pete Groom",
-            "description": "Open to alums and current student! Tournament qualifiers every March, weekly games open to all.",
-            "logo_src": "/src/assets/diskgolf.jpg"
+            "description": "Open to alums and current students! Tournament qualifiers every March, weekly games open to all.",
+            "logo_src": "/assets/diskgolf.jpg"
         },
         "CU Poetry Society": {
             "name": "CU Poetry Society",
             "organizer": "William Wordsworth",
             "description": "If you long to savor beauty's nectar, bring an open heart to our weekly lecture!",
-            "logo_src": "/src/assets/poetry.jpg"
+            "logo_src": "/assets/poetry.png"
         },
         "Cornerstone Other-Serve":{
             "name": "Cornerstone Other-Serve",
             "organizer": "Thomas Aquinas",
             "description": "...Because we aren't created to self-serve! Explore God's calling for you with Prof. Thomas Aquinas.",
-            "logo_src": "/src/assets/service.jpg"
+            "logo_src": "/assets/service.jpg"
         },
         "CU Smash":{
             "name": "CU Smash",
             "organizer": "Carl Wilkins",
             "description": "SETTLE IT IN SMASH! SP/ FA brackets sign ups are due on drop-add.",
-            "logo_src": "/src/assets/service.jpg"
+            "logo_src": "/assets/smash.png"
         },
         "Mindfulness":{
             "name": "Mindfulness",
             "organizer": "Anna Karenina",
-            "description": "Aixous? Overloaded? On-edge? Just... breathe. We host beginner sessions TR by the pond. Come learn to let go and let God!",
-            "logo_src": "/src/assets/mindfulness.png"
+            "description": "Anxious? Overloaded? On-edge? Just... breathe. We host beginner sessions TR by the pond. Come learn to let go and let God!",
+            "logo_src": "/assets/mindfulness.png"
         }
 
     }
