@@ -146,6 +146,7 @@ export class HomeComponent implements OnInit {
   }
 }
 
+
 @Component({
   selector: "org-view-dialog",
   templateUrl: "org-view-dialog.html",
