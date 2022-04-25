@@ -1,1 +1,23 @@
-<h1>{{test_orgs}}</h1>>
+<h1>c u ... where?</h1>
+<!--<a class="btn btn-light btn-sm mb-3" routerLink="/newevent">New event</a>-->
+<div id="container" class="container">
+  <div id="row" class="row">
+    <div id="col" class="col"></div>
+    <div id="col-8" class="col-8">
+      <table id="master-div" class="row row-cols-md-3 g-4">
+        <tr class="col" *ngFor="let org of orgs">
+            <td class="card" (click)="viewOrg(org)">
+              <img src="{{org.get_logo()}}" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title">{{org.get_name()}}</h5>
+              </div>
+            </td>
+          </tr>
+      </table>
+    </div>
+    <div class="col"></div>
+  </div>
+  <div class="row">
+    <div class="col g-5"></div>
+  </div>
+</div>

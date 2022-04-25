@@ -1,6 +1,6 @@
 import { setupTestingRouter } from '@angular/router/testing';
 import * as MicrosoftGraph from '@microsoft/microsoft-graph-types';
-import { NewEvent } from './NewEvent';
+import { Event } from './Event';
 
 export class Org{
   
@@ -19,12 +19,29 @@ export class Org{
     public set_organizer(v : string) {
       this._organizer = v;
     }
-
-    private _events : NewEvent[];
-    public get_events() : NewEvent[] {
+    
+    private _description : string;
+    public get_description() : string {
+      return this._description;
+    }
+    public set_description(v : string) {
+      this._description = v;
+    }
+    
+    private logo_src: string;
+    public get_logo(){
+      return this.logo_src;
+    }
+    public set_logo(v:string) {
+      this.logo_src = v;
+    }
+    
+    
+    private _events : Event[];
+    public get_events() : Event[] {
       return this._events;
     }
-    public set_events(v : NewEvent[]) {
+    public set_events(v : Event[]) {
       this._events = v;
     }
    

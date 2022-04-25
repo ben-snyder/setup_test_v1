@@ -1,0 +1,102 @@
+{
+    "orgs": {
+        "Chess club": {
+            "name": "Chess Club",
+            "organizer": "Dan Smith",
+            "description": "A welcoming environment for chess newbies all the way up to pros!",
+            "logo_src": "/assets/chess.jpg",
+            "events": [
+                {
+                    "name": "Tournament #1",
+                    "start": "05/02/22:T12:00:00",
+                    "end": "05/02/22:T13:00:00",
+                    "location": "Campus",
+                    "desc": "First chess tournament",
+                    "attendees": "benjamin.snyder@cornerstone.edu;avery.wittmer@cornerstone.edu"
+                },
+                {
+                    "name": "Tournament #2",
+                    "start": "05/02/22:T13:00:00",
+                    "end": "05/02/22:T14:00:00",
+                    "location": "Campus",
+                    "desc": "Second chess tournament",
+                    "attendees": "benjamin.snyder@cornerstone.edu;avery.wittmer@cornerstone.edu"
+                }
+            ]
+        },
+        "Math club": {
+            "name": "Math Club",
+            "organizer": "Roger Weiss",
+            "description": "Come join us for new group math puzzles every week!",
+            "logo_src": "/assets/math.jpg",
+            "events": [
+                {
+                    "name": "Tournament #1",
+                    "start": "05/02/22:T12:00:00",
+                    "end": "05/02/22:T13:00:00",
+                    "location": "Campus",
+                    "desc": "First math tournament",
+                    "attendees": "benjamin.snyder@cornerstone.edu;avery.wittmer@cornerstone.edu"
+                },
+                {
+                    "name": "Tournament #2",
+                    "start": "05/02/22:T13:00:00",
+                    "end": "05/02/22:T14:00:00",
+                    "location": "Campus",
+                    "desc": "Second math tournament",
+                    "attendees": "benjamin.snyder@cornerstone.edu;avery.wittmer@cornerstone.edu"
+                },
+                {
+                    "name": "Tournament #3",
+                    "start": "05/02/22:T14:00:00",
+                    "end": "05/02/22:T15:00:00",
+                    "location": "Campus",
+                    "desc": "Third math tournament",
+                    "attendees": "benjamin.snyder@cornerstone.edu;avery.wittmer@cornerstone.edu"
+                }
+            ]
+        },
+        "CU Boxing": {
+            "name": "CU Boxing",
+            "organizer": "George Foreman",
+            "description": "We're a strong team of committed fighters looking to grow! Waiver needed before sparring.",
+            "logo_src": "/assets/boxing.jpg",
+            "events":[]
+        },
+        "CU Disk Golf": {
+            "name": "CU Disk Golf",
+            "organizer": "Pete Groom",
+            "description": "Open to alums and current students! Tournament qualifiers every March, weekly games open to all.",
+            "logo_src": "/assets/diskgolf.jpg",
+            "events":[]
+        },
+        "CU Poetry Society": {
+            "name": "CU Poetry Society",
+            "organizer": "William Wordsworth",
+            "description": "If you long to savor beauty's nectar, bring an open heart to our weekly lecture!",
+            "logo_src": "/assets/poetry.png",
+            "events":[]
+        },
+        "Cornerstone Other-Serve": {
+            "name": "Cornerstone Other-Serve",
+            "organizer": "Thomas Aquinas",
+            "description": "...Because we aren't created to self-serve! Explore God's calling for you with Prof. Thomas Aquinas.",
+            "logo_src": "/assets/service.jpg",
+            "events":[]
+        },
+        "CU Smash": {
+            "name": "CU Smash",
+            "organizer": "Carl Wilkins",
+            "description": "SETTLE IT IN SMASH! SP/ FA brackets sign ups are due on drop-add.",
+            "logo_src": "/assets/smash.png",
+            "events":[]
+        },
+        "Mindfulness": {
+            "name": "Mindfulness",
+            "organizer": "Anna Karenina",
+            "description": "Anxious? Overloaded? On-edge? Just... breathe. We host beginner sessions TR by the pond. Come learn to let go and let God!",
+            "logo_src": "/assets/mindfulness.png",
+            "events":[]
+        }
+    }
+}

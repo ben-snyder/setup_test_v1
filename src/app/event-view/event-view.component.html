@@ -3,26 +3,37 @@
 <h1>CU There Events</h1>
 
 <div class="container" onload="onLoad">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-8">
-        <div class="row row-cols-md-3 g-4">
-          <div class="col" *ngFor="let event of test_events">
-            <a routerLink="/event-detail" class="btn-link" routerLinkActive="active">
-              <div class="card org-card">
-                <img src="../assets/placeholder.jpg" class="img-fluid">
-                <div class="card-body">
-                  <h5 class="card-title">{{event.subject}}</h5>
-                  <p class="card-text">{{event.body}}</p>
-                </div>
+  <div class="row">
+    <div class="col"></div>
+    <div class="col-8">
+      <!-- <div class="row row-cols-md-3 g-4">
+        <div class="col" *ngFor="let event of events">
+          <a routerLink="/event-detail" class="btn-link" routerLinkActive="active">
+            <div class="card org-card">
+              <img src="{{event.get_logo()}}" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title">{{event.get_name()}}</h5>
+                <p class="card-text">{{event.get_desc()}}</p>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
-      </div>
-      <div class="col"></div>
+      </div> -->
+      <table id="master-div" class="row row-cols-md-3 g-4">
+        <tr class="col" *ngFor="let event of events">
+            <td class="card" (click)="viewEvent(event)">
+              <img src="{{event.get_logo()}}" class="img-fluid">
+              <div class="card-body">
+                <h5 class="card-title">{{event.get_name()}}</h5>
+                <p class="card-text">{{event.get_desc()}}</p>
+              </div>
+            </td>
+          </tr>
+      </table>
     </div>
-    <div class="row">
-      <div class="col g-5"></div>
-    </div>
+    <div class="col"></div>
   </div>
+  <div class="row">
+    <div class="col g-5"></div>
+  </div>
+</div>
