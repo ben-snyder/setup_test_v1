@@ -29,6 +29,7 @@ import { Org } from '../Org';
 import { CurrentUser } from '../CurrentUser';
 import { NewEvent } from '../NewEvent';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbCarouselComponent } from '../ngb-carousel/ngb-carousel.component';
 
 @Component({
   selector: 'app-home',

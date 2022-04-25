@@ -22,6 +22,7 @@ import { EventViewComponent } from './event-view/event-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatDialog, MatDialogModule} from '@angular/material/dialog';
 import { OrgViewComponent } from './org-view/org-view.component';
+import { NgbCarouselComponent } from './ngb-carousel/ngb-carousel.component';
 
 let msalInstance: IPublicClientApplication | undefined = undefined;
 
@@ -48,8 +49,9 @@ export function MSALInstanceFactory(): IPublicClientApplication {
     AlertsComponent,
     CalendarComponent,
     NewEventComponent,
+    OrgViewComponent,
     EventViewComponent,
-    OrgViewComponent
+    NgbCarouselComponent
   ],
   imports: [
     BrowserModule,
